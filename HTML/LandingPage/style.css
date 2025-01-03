@@ -1,0 +1,42 @@
+/* Estilos personalizados */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+header .logo {
+  font-size: 1.8rem;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+blockquote {
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.blockquote-footer {
+  font-size: 1rem;
+  margin-top: 10px;
+}
