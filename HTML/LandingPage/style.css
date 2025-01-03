@@ -40,3 +40,54 @@ blockquote {
   font-size: 1rem;
   margin-top: 10px;
 }
+/* Banner */
+#banner {
+  position: relative;
+  height: 600px; /* Ajuste a altura conforme necessário */
+  background-image: url('https://via.placeholder.com/1200x600'); /* Substitua pela imagem do produto */
+  background-size: cover;
+  background-position: left center; /* A imagem será alinhada à esquerda, mostrando o produto */
+  color: white;
+  display: flex;
+  align-items: center; /* Alinha verticalmente o texto */
+  justify-content: flex-start; /* Para garantir que o conteúdo comece à esquerda */
+  padding-left: 50%; /* Para que o texto inicie da metade direita da tela */
+  margin-left: 1rem; /* Margem esquerda */
+  margin-right: 1rem; /* Margem direita */
+  overflow: hidden; /* Para evitar que o conteúdo ultrapasse os limites do banner */
+}
+
+/* Contêiner de Texto e Botão */
+.banner-content {
+  width: 100%; /* Ocupa a largura disponível */
+  display: flex;
+  justify-content: space-between; /* Alinha texto à esquerda e botão à direita */
+  flex-direction: column; /* O botão ficará abaixo do texto */
+  padding-right: 20px; /* Espaçamento à direita do texto */
+}
+
+/* Texto no Banner */
+.banner-text {
+  font-size: 2rem;
+  font-weight: bold;
+  max-width: 50%; /* Limita a largura do texto a 50% da tela */
+  text-align: left; /* Alinha o texto à esquerda dentro do seu contêiner */
+}
+
+/* Botão CTA */
+.cta-button {
+  width: 100%; /* O botão se estende de 50% até 100% da tela */
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  background-color: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px; /* Espaço entre o texto e o botão */
+}
+
+.cta-button:hover {
+  background-color: #e60000;
+}
