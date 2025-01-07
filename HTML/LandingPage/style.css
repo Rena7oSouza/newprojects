@@ -1,6 +1,15 @@
+:root{
+  --borders: #007BFF;
+  --cta-buttons: red; 
+  --background: black;
+  --fontcolor: white;
+}
+
 /* Estilos personalizados */
 body {
   font-family: 'Arial', sans-serif;
+  background-color: var(--background);
+  color:var(--fontcolor)
 }
 
 h1, h2 {
@@ -20,11 +29,56 @@ footer p {
   font-size: 0.9rem;
 }
 
-.card-title {
+.card, .price-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background);
+  border-radius: 5%;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 5px solid var(--borders);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.price-card{
+  border: 1px solid var(--borders);
+
+}
+.card-img-top {
+  width: calc(100% - 20%); /* Subtrai 10% de cada lado */
+  height: auto;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 5%;
+  border: 5px solid var(--borders);
+}
+.card-body {
+  padding-left: 10%;
+  padding-right: 10%;
+  flex-grow: 1; 
+}
+.card-title, .card-text {
+  margin-bottom: 10px;
+  text-align: start;
+}
+.bonus-card-title, .bonus-card-text {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.price-card-title {
   font-size: 1.2rem;
 }
 
-.card-text {
+.price-card-text {
   font-size: 1rem;
 }
 
@@ -47,7 +101,7 @@ blockquote {
   background-image: url('https://via.placeholder.com/1200x600'); /* Substitua pela imagem do produto */
   background-size: cover;
   background-position: left center; /* A imagem será alinhada à esquerda, mostrando o produto */
-  color: white;
+  color: var(--fontcolor);
   display: flex;
   align-items: center; /* Alinha verticalmente o texto */
   justify-content: flex-start; /* Para garantir que o conteúdo comece à esquerda */
@@ -79,9 +133,9 @@ blockquote {
   width: 100%; /* O botão se estende de 50% até 100% da tela */
   font-size: 1.2rem;
   padding: 12px 25px;
-  background-color: red;
+  background-color: var(--cta-buttons);
   border: none;
-  color: white;
+  color: var(--fontcolor);
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
@@ -94,8 +148,7 @@ blockquote {
 
 
 .features-box,.features-box ul li{
-  background-color: #ffffff;
-  border: 2px solid #007BFF;
+  border: 2px solid var(--borders);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -103,7 +156,7 @@ blockquote {
   padding-block: 1%;
 }
 .features-box h3 {
-  color: #007BFF;
+  color: var(--borders);
   margin-bottom: 15px;
 }
 .features-box ul {
