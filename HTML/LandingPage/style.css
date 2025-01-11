@@ -1,8 +1,9 @@
 :root{
-  --borders: #007BFF;
+  --bordercolor: #007BFF;
   --cta-buttons: red; 
   --background: black;
   --fontcolor: white;
+  --cardsborder: double;
 }
 
 /* Estilos personalizados */
@@ -39,7 +40,8 @@ footer p {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 5px solid var(--borders);
+  border: 5px var(--cardsborder) var(--bordercolor);
+  min-height: 400px;
 }
 
 .row {
@@ -49,22 +51,23 @@ footer p {
 
 
 .price-card{
-  border: 1px solid var(--borders);
+  border: 1px var(--cardsborder) var(--bordercolor);
 
 }
 .card-img-top {
   width: calc(100% - 20%); /* Subtrai 10% de cada lado */
-  height: auto;
   margin-top: 10%;
   margin-left: 10%;
   margin-right: 10%;
   border-radius: 5%;
-  border: 5px solid var(--borders);
+  border:5px var(--cardsborder) var(--bordercolor);
+  object-fit: cover;
 }
 .card-body {
   padding-left: 10%;
   padding-right: 10%;
   flex-grow: 1; 
+  justify-content: space-between;
 }
 .card-title, .card-text {
   margin-bottom: 10px;
@@ -130,7 +133,7 @@ blockquote {
 
 /* Botão CTA */
 .cta-button {
-  width: 100%; /* O botão se estende de 50% até 100% da tela */
+  width: 100%;
   font-size: 1.2rem;
   padding: 12px 25px;
   background-color: var(--cta-buttons);
@@ -139,16 +142,56 @@ blockquote {
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 20px; /* Espaço entre o texto e o botão */
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Começa fora da tela à esquerda */
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.397); /* Brilho branco simples */
+  transition: none; /* Remove a transição para o brilho */
+  z-index: 1;
+  transform: rotate(135deg); /* Rotaciona o brilho em 45 graus */
 }
 
 .cta-button:hover {
   background-color: #e60000;
+  transform: scale(1.05); /* Faz o botão crescer */
+}
+
+.cta-button:hover::before {
+  animation: shine 1.5s forwards; /* Aciona a animação */
+}
+
+@keyframes shine {
+  0% {
+    left: -100%; /* Começa fora da tela à esquerda */
+    top: -100%; /* Começa fora da tela acima */
+  }
+  100% {
+    left: 100%; /* Move o brilho para a direita */
+    top: 100%; /* Move o brilho para baixo */
+  }
+}
+
+.cta-button-text {
+  z-index: 2; /* Garante que o texto apareça por cima do brilho */
+}
+
+
+.cta-button-text {
+  z-index: 2; /* Garante que o texto apareça por cima do brilho */
 }
 
 
 .features-box,.features-box ul li{
-  border: 2px solid var(--borders);
+  border: 2px var(--cardsborder) var(--bordercolor);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -156,7 +199,7 @@ blockquote {
   padding-block: 1%;
 }
 .features-box h3 {
-  color: var(--borders);
+  color: var(--bordercolor);
   margin-bottom: 15px;
 }
 .features-box ul {
@@ -173,7 +216,13 @@ blockquote {
 .features-box .cta-button{
   width: 50%;
 }
-
+.bonus-box{
+  border: 2px var(--cardsborder) var(--bordercolor);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 3%;
+}
 .green-color{
   color: green;
   margin-left: 2%;
