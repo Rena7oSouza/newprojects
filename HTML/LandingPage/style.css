@@ -1,35 +1,57 @@
+  /* Define color scheme reusable variables, and images */
 :root{
   --bordercolor: #007BFF;
-  --cta-buttons: red; 
-  --background: black;
+  --ctabuttoncolor: red; 
+  --backgroundcolor: black;
   --fontcolor: white;
   --cardsborder: double;
+  --bannertopimage:url('https://via.placeholder.com/1200x600');
+  --bannerbottomimage:url('https://via.placeholder.com/1200x600');
 }
 
-/* Estilos personalizados */
+/* General body styles */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: var(--background);
-  color:var(--fontcolor)
+  background-color: var(--backgroundcolor);
+  color: var(--fontcolor)
 }
 
+/* Basic heading styles */
 h1, h2 {
   font-weight: bold;
 }
 
+/* Logo customization in header */
 header .logo {
   font-size: 1.8rem;
 }
 
+/* Section margins */
 section {
   margin-bottom: 60px;
 }
+
 
 footer p {
   margin: 0;
   font-size: 0.9rem;
 }
 
+/* Blockquote styling */
+blockquote {
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.blockquote-footer {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Card styles */
 .card, .price-card {
   position: relative;
   overflow: hidden;
@@ -49,13 +71,12 @@ footer p {
   flex-wrap: wrap;
 }
 
-
 .price-card{
   border: 1px var(--cardsborder) var(--bordercolor);
-
 }
+
 .card-img-top {
-  width: calc(100% - 20%); /* Subtrai 10% de cada lado */
+  width: calc(100% - 20%);
   margin-top: 10%;
   margin-left: 10%;
   margin-right: 10%;
@@ -85,61 +106,48 @@ footer p {
   font-size: 1rem;
 }
 
-blockquote {
-  font-style: italic;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
 
-.blockquote-footer {
-  font-size: 1rem;
-  margin-top: 10px;
-}
-/* Banner */
-#banner-top{
+#banner-top, #banner-bottom{
   position: relative;
-  height: 600px; /* Ajuste a altura conforme necessário */
-  background-image: url('https://via.placeholder.com/1200x600'); /* Substitua pela imagem do produto */
+  height: 600px;
   background-size: cover;
-  background-position: left center; /* A imagem será alinhada à esquerda, mostrando o produto */
   color: var(--fontcolor);
   display: flex;
-  align-items: center; /* Alinha verticalmente o texto */
-  justify-content: flex-start; /* Para garantir que o conteúdo comece à esquerda */
-  padding-left: 50%; /* Para que o texto inicie da metade direita da tela */
-  margin-left: 1rem; /* Margem esquerda */
-  margin-right: 1rem; /* Margem direita */
-  overflow: hidden; /* Para evitar que o conteúdo ultrapasse os limites do banner */
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  overflow: hidden;
+}
+#banner-top{
+  background-image:var(--bannertopimage);
+  background-position: left center;
+  padding-left: 50%;
 }
 
-/* Contêiner de Texto e Botão */
 .banner-content-top {
-  width: 100%; /* Ocupa a largura disponível */
+  width: 100%;
   display: flex;
-  justify-content: space-between; /* Alinha texto à esquerda e botão à direita */
-  flex-direction: column; /* O botão ficará abaixo do texto */
-  padding-right: 20px; /* Espaçamento à direita do texto */
+  justify-content: space-between;
+  flex-direction: column;
+  padding-right: 20px;
 }
 
-/* Texto no Banner */
-.banner-text-top {
+.banner-text {
   font-size: 2rem;
   font-weight: bold;
-  max-width: 50%; /* Limita a largura do texto a 50% da tela */
-  text-align: left; /* Alinha o texto à esquerda dentro do seu contêiner */
+  max-width: 50%;
+  text-align: left;
 }
 #banner-top .cta-button{
   width: 100%;
 }
 
-/* Botão CTA */
 .cta-button {
   width: 50%;
   font-size: 1.2rem;
   padding: 12px 25px;
-  background-color: var(--cta-buttons);
+  background-color: var(--ctabuttoncolor);
   border: none;
   color: var(--fontcolor);
   font-weight: bold;
@@ -156,49 +164,42 @@ blockquote {
   margin-top: 20px;
 }
 
-
 .cta-button::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%; /* Começa fora da tela à esquerda */
+  left: -100%;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.397); /* Brilho branco simples */
-  transition: none; /* Remove a transição para o brilho */
+  background: rgba(255, 255, 255, 0.397);
+  transition: none;
   z-index: 1;
-  transform: rotate(135deg); /* Rotaciona o brilho em 45 graus */
+  transform: rotate(135deg);
 }
 
 .cta-button:hover {
   background-color: #e60000;
-  transform: scale(1.05); /* Faz o botão crescer */
+  transform: scale(1.05);
 }
 
 .cta-button:hover::before {
-  animation: shine 1.5s forwards; /* Aciona a animação */
+  animation: shine 1.5s forwards;
 }
 
 @keyframes shine {
   0% {
-    left: -100%; /* Começa fora da tela à esquerda */
-    top: -100%; /* Começa fora da tela acima */
+    left: -100%;
+    top: -100%;
   }
   100% {
-    left: 100%; /* Move o brilho para a direita */
-    top: 100%; /* Move o brilho para baixo */
+    left: 100%;
+    top: 100%;
   }
 }
 
 .cta-button-text {
-  z-index: 2; /* Garante que o texto apareça por cima do brilho */
+  z-index: 2;
 }
-
-
-.cta-button-text {
-  z-index: 2; /* Garante que o texto apareça por cima do brilho */
-}
-
 
 .features-box,.features-box ul li{
   border: 2px var(--cardsborder) var(--bordercolor);
@@ -241,35 +242,32 @@ blockquote {
 }
 
 #banner-bottom {
-  position: relative;
-  height: 600px; /* Ajuste a altura conforme necessário */
-  background-image: url('https://via.placeholder.com/1200x600'); /* Substitua pela imagem do produto */
-  background-size: cover;
-  background-position: right center; /* A imagem será alinhada à direita */
-  color: var(--fontcolor);
-  display: flex;
-  align-items: center; /* Alinha verticalmente o texto */
-  justify-content: flex-start; /* Para garantir que o conteúdo comece à esquerda */
-  padding-left: 0; /* O texto começa no começo da tela, sem deslocamento */
-  margin-left: 1rem; /* Margem esquerda */
-  margin-right: 1rem; /* Margem direita */
-  overflow: hidden; /* Para evitar que o conteúdo ultrapasse os limites do banner */
+
+  background-image: var(--bannerbottomimage);
+  background-position: right center;
+  padding-left: 0;
 }
 
-/* Contêiner de Texto e Botão */
 .banner-content-bottom {
-  width: 100%; /* Ocupa a largura disponível */
+  width: 100%;
   display: flex;
-  justify-content: space-between; /* Alinha texto à esquerda e botão à direita */
-  flex-direction: column; /* O botão ficará abaixo do texto */
-  padding-left: 20px; /* Espaçamento à esquerda do texto */
-  padding-right: 20px; /* Espaçamento à direita do texto */
+  justify-content: space-between;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-/* Texto no Banner Inferior */
-.banner-text-bottom {
-  font-size: 2rem;
-  font-weight: bold;
-  max-width: 50%; /* Limita a largura do texto a 50% da tela */
-  text-align: left; /* Alinha o texto à esquerda dentro do seu contêiner */
+/* Alinhar o conteúdo dentro do botão */
+.accordion-button {
+  display: flex;           /* Usando flexbox para alinhar ícone e texto */
+  align-items: center;     /* Alinhando o conteúdo verticalmente */
 }
+
+/* Estilizando o ícone */
+.accordion-button i {
+  margin-right: 10px;      /* Espaço entre a seta e o texto */
+  font-size: 1.2rem;       /* Ajustando o tamanho da seta */
+}
+
+
+
