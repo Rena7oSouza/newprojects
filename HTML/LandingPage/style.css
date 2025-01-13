@@ -98,7 +98,7 @@ blockquote {
   margin-top: 10px;
 }
 /* Banner */
-#banner {
+#banner-top{
   position: relative;
   height: 600px; /* Ajuste a altura conforme necessário */
   background-image: url('https://via.placeholder.com/1200x600'); /* Substitua pela imagem do produto */
@@ -115,7 +115,7 @@ blockquote {
 }
 
 /* Contêiner de Texto e Botão */
-.banner-content {
+.banner-content-top {
   width: 100%; /* Ocupa a largura disponível */
   display: flex;
   justify-content: space-between; /* Alinha texto à esquerda e botão à direita */
@@ -124,16 +124,19 @@ blockquote {
 }
 
 /* Texto no Banner */
-.banner-text {
+.banner-text-top {
   font-size: 2rem;
   font-weight: bold;
   max-width: 50%; /* Limita a largura do texto a 50% da tela */
   text-align: left; /* Alinha o texto à esquerda dentro do seu contêiner */
 }
+#banner-top .cta-button{
+  width: 100%;
+}
 
 /* Botão CTA */
 .cta-button {
-  width: 100%;
+  width: 50%;
   font-size: 1.2rem;
   padding: 12px 25px;
   background-color: var(--cta-buttons);
@@ -146,6 +149,13 @@ blockquote {
   position: relative;
   overflow: hidden;
 }
+
+.cta-button-container {
+  display: flex; 
+  justify-content: center; 
+  margin-top: 20px;
+}
+
 
 .cta-button::before {
   content: '';
@@ -223,8 +233,43 @@ blockquote {
   text-align: center;
   padding: 3%;
 }
+
 .green-color{
   color: green;
   margin-left: 2%;
   margin-right: 1%;
+}
+
+#banner-bottom {
+  position: relative;
+  height: 600px; /* Ajuste a altura conforme necessário */
+  background-image: url('https://via.placeholder.com/1200x600'); /* Substitua pela imagem do produto */
+  background-size: cover;
+  background-position: right center; /* A imagem será alinhada à direita */
+  color: var(--fontcolor);
+  display: flex;
+  align-items: center; /* Alinha verticalmente o texto */
+  justify-content: flex-start; /* Para garantir que o conteúdo comece à esquerda */
+  padding-left: 0; /* O texto começa no começo da tela, sem deslocamento */
+  margin-left: 1rem; /* Margem esquerda */
+  margin-right: 1rem; /* Margem direita */
+  overflow: hidden; /* Para evitar que o conteúdo ultrapasse os limites do banner */
+}
+
+/* Contêiner de Texto e Botão */
+.banner-content-bottom {
+  width: 100%; /* Ocupa a largura disponível */
+  display: flex;
+  justify-content: space-between; /* Alinha texto à esquerda e botão à direita */
+  flex-direction: column; /* O botão ficará abaixo do texto */
+  padding-left: 20px; /* Espaçamento à esquerda do texto */
+  padding-right: 20px; /* Espaçamento à direita do texto */
+}
+
+/* Texto no Banner Inferior */
+.banner-text-bottom {
+  font-size: 2rem;
+  font-weight: bold;
+  max-width: 50%; /* Limita a largura do texto a 50% da tela */
+  text-align: left; /* Alinha o texto à esquerda dentro do seu contêiner */
 }
