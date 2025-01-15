@@ -5,15 +5,19 @@
   --backgroundcolor: black;
   --fontcolor: white;
   --cardsborder: double;
+  --cardscolor: #141414;
   --bannertopimage:url('https://via.placeholder.com/1200x600');
   --bannerbottomimage:url('https://via.placeholder.com/1200x600');
+  /* Change the bootstrap accordion-buttons color*/
+  --bs-border-color: #424242;
+  --bs-body-bg:#141414;
 }
 
 /* General body styles */
 body {
   font-family: 'Arial', sans-serif;
   background-color: var(--backgroundcolor);
-  color: var(--fontcolor)
+  color: var(--fontcolor);
 }
 
 /* Basic heading styles */
@@ -257,17 +261,29 @@ blockquote {
   padding-right: 20px;
 }
 
-/* Alinhar o conteúdo dentro do botão */
-.accordion-button {
-  display: flex;           /* Usando flexbox para alinhar ícone e texto */
-  align-items: center;     /* Alinhando o conteúdo verticalmente */
+.accordion-button, .accordion-body{
+  background-color: var(--cardscolor);
+  color: var(--fontcolor);
 }
 
-/* Estilizando o ícone */
+.accordion-button:focus, .accordion-button:active {
+  background-color: var(--cardscolor);
+  box-shadow: none; 
+  color: var(--fontcolor);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--cardscolor); 
+}
+
+.accordion-button:after {
+
+  margin-left:0!important;
+  order: -1; /*swap dropdown button with text*/
+  /*Change fill hexadecimal number to change color of arrow in accordion-button*/
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
 .accordion-button i {
-  margin-right: 10px;      /* Espaço entre a seta e o texto */
-  font-size: 1.2rem;       /* Ajustando o tamanho da seta */
+  margin-right: 2%;
 }
-
-
-
