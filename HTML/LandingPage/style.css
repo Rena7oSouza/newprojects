@@ -6,8 +6,8 @@
   --fontcolor: white;
   --cardsborder: double;
   --cardscolor: #141414;
-  --bannertopimage:url('https://via.placeholder.com/1200x600');
-  --bannerbottomimage:url('https://via.placeholder.com/1200x600');
+  --bannertopimage:url('images/bannertop.jpg');
+  --bannerbottomimage:url('images/bannerbottom.jpg');
   /* Change the bootstrap accordion-buttons color*/
   --bs-border-color: #424242;
   --bs-body-bg:#141414;
@@ -100,6 +100,10 @@ blockquote {
 .card-title, .card-text {
   margin-bottom: 10px;
   text-align: start;
+}
+
+.card-title, .bonus-card-title, .price-card-title{
+  font-weight: bold;
 }
 .bonus-card-title, .bonus-card-text {
   margin-bottom: 10px;
@@ -208,6 +212,7 @@ blockquote {
   z-index: 2;
 }
 
+
 .features-box,.features-box ul li{
   border: 2px var(--cardsborder) var(--bordercolor);
   border-radius: 8px;
@@ -242,8 +247,11 @@ blockquote {
   padding: 3%;
 }
 
-.green-color{
+.green-color, .green-color-check{
   color: green;
+}
+
+.green-color-check{
   margin-left: 2%;
   margin-right: 1%;
 }
