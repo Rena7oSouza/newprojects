@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina com Menu Responsivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <section id="header">
+        <button class="my-nav-btn open-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="my-nav my-nav-green">
+            <div class="my-nav my-nav-yellow">
+                <div class="my-nav my-nav-blue">
+                    <div class="my-nav my-nav-white">
+                        <button class="my-nav-btn close-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <img src="templates/image.jpg" alt="" class="my-photo">
+                        <ul class="list">
+                            <li><a href="#">About Me</a></li>
+                            <li><a href="#">Skills</a></li>
+                            <li><a href="#" id="certifications">CERTIFICATIONS</a></li>
+                            <li id="certificationsList" class="certifications-list" style="display: none;">
+                                <ul>
+                                    <li><a href="#">Graduations</a></li>
+                                    <li><a href="#">Courses</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" id="projects">PROJECTS</a></li>
+                            <li id="projectList" class="project-list" style="display: none;">
+                                <ul>
+                                    <li><a href="#">HTML/CSS</a></li>
+                                    <li><a href="#">Python</a></li>
+                                    <li><a href="#">Javascript</a></li>
+                                    <li><a href="#">Unity</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact Me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 id="text" class="text"></h1>
+    </section>
+
+    <section id="main-content">
+        <!-- Conteúdo principal vai aqui -->
+    </section>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
