@@ -4,6 +4,34 @@ const close_btn = document.querySelector('.close-btn');
 const nav = document.querySelectorAll('.my-nav');
 const mainContent = document.getElementById('main-content');
 const menuItems = document.querySelectorAll('.list li a');
+window.addEventListener('DOMContentLoaded', () => {
+    const aboutMeLink = document.querySelector('a[href="#about"]');
+    if (aboutMeLink) {
+        changeContent.call(aboutMeLink, { preventDefault: () => { } }); // Chama a função para "About Me"
+    }
+});
+
+const sections = document.querySelectorAll('section');
+sections.forEach(section => {
+    if (section.id !== 'header') {
+        section.style.display = 'none';
+    }
+});
+
+document.getElementById('about').style.display = 'block';
+
+// Mapping between the text of the menu item and the section ID
+const idMap = {
+    'About Me': 'about',
+    'Skills': 'skills',
+    'Graduations': 'graduations',
+    'Courses': 'courses',
+    'HTML/CSS': 'html-css',
+    'Python': 'python',
+    'Javascript': 'javascript',
+    'Unity': 'unity',
+    'Contact Me': 'contact'
+};
 
 // Function to change the content
 function changeContent(e) {
@@ -11,11 +39,12 @@ function changeContent(e) {
     const contentId = idMap[this.textContent];
     const contentElement = document.getElementById(contentId);
     if (contentElement) {
-        // Hide all sections
         sections.forEach(section => {
-            section.style.display = 'none';
+            if (section.id !== 'header') {
+                section.style.display = 'none';
+            }
         });
-        // Show the corresponding section
+
         contentElement.style.display = 'block';
     }
 }
@@ -28,11 +57,11 @@ function handleProjectClick() {
         projectList.style.display = "none";
     }
 
-    if (projectList.style.maxHeight){
+    if (projectList.style.maxHeight) {
         projectList.style.maxHeight = null;
     } else {
         projectList.style.maxHeight = projectList.scrollHeight + "px";
-    } 
+    }
 }
 
 // Function to handle certifications click
@@ -43,11 +72,11 @@ function handleCertificationsClick() {
         certificationsList.style.display = "none";
     }
 
-    if (certificationsList.style.maxHeight){
+    if (certificationsList.style.maxHeight) {
         certificationsList.style.maxHeight = null;
     } else {
         certificationsList.style.maxHeight = certificationsList.scrollHeight + "px";
-    } 
+    }
 }
 
 
@@ -77,8 +106,8 @@ close_btn.addEventListener('click', () => {
 });
 
 // Function to handle end of transition
-mainContent.addEventListener('transitionend', function() {
-  mainContent.classList.remove('menu-closing'); // Remove class when transition ends
+mainContent.addEventListener('transitionend', function () {
+    mainContent.classList.remove('menu-closing'); // Remove class when transition ends
 });
 
 // Titles for typing function
@@ -90,19 +119,19 @@ let isFirstRun = true;
 // Typing function
 function typeWriter() {
     if (i < titles[titleIndex].length) {
-        document.getElementById('text').innerHTML += titles[titleIndex].charAt(i);
+        document.getElementById('title').innerHTML += titles[titleIndex].charAt(i);
         i++;
         setTimeout(typeWriter, 100);
     } else {
-        document.getElementById('text').style.animation = 'none';
+        document.getElementById('title').style.animation = 'none';
         let delayBeforeNextTitle = titles[titleIndex] === 'Hello, I\'m Renato Souza' ? 0 : 2000;
         setTimeout(() => {
-            document.getElementById('text').innerHTML = '';
-            document.getElementById('text').style.animation = '';
+            document.getElementById('title').innerHTML = '';
+            document.getElementById('title').style.animation = '';
             i = 0;
             titleIndex = (titleIndex + 1) % titles.length;
-            let newTitle = document.getElementById('text').cloneNode(true);
-            document.getElementById('text').parentNode.replaceChild(newTitle, document.getElementById('text'));
+            let newTitle = document.getElementById('title').cloneNode(true);
+            document.getElementById('title').parentNode.replaceChild(newTitle, document.getElementById('title'));
             setTimeout(typeWriter, delayBeforeNextTitle);
         }, 3000);
     }

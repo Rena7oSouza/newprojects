@@ -1,3 +1,7 @@
+:root{
+  --bordercolor: blue;
+}
+
 /* Main Content Styles */
 #main-content.menu-closing {
   transition: margin-left 0.3s ease-in-out 0.6s;
@@ -84,6 +88,7 @@
   padding: 30px;
   position: relative;
   transition-delay: 0s;
+  overflow-y: auto;
 }
 
 .my-nav-white.visible {
@@ -169,31 +174,30 @@
 }
 
 /* Text Styles */
-#text {
+#title {
   display: flex;
-  justify-content: center; /* Centraliza o conteúdo horizontalmente */
-  align-items: center;     /* Centraliza o conteúdo verticalmente */
-  white-space: nowrap;     /* Impede que o texto quebre em várias linhas */
-  overflow: hidden;        /* Impede que o texto ultrapasse os limites do contêiner */
-  font-size: 40px;         /* Tamanho padrão do texto */
-  position: relative;      /* Para posicionar o cursor de forma absoluta */
+  justify-content: center; 
+  align-items: center;    
+  white-space: nowrap;     
+  overflow: hidden;       
+  font-size: 40px;         
+  position: relative;     
   margin-inline: 10%;
 }
 
-#text::after {
-  content: '|';            /* Simula o cursor */
-  animation: blink 1s infinite; /* Animação de piscar */
-  margin-left: 5px;        /* Espaço entre o texto e o cursor */
-}
+#title::after {
+  content: '|';          
+  animation: blink 1s infinite; 
+  margin-left: 5px;      }
 @media screen and (max-width: 768px) {
-  #text {
-    font-size: 25px; /* Diminui o tamanho do texto para dispositivos móveis */
+  #title {
+    font-size: 25px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  #text {
-    font-size: 20px; /* Diminui ainda mais o tamanho para telas muito pequenas */
+  #title {
+    font-size: 20px; 
   }
 }
 /* Animation */
@@ -209,4 +213,60 @@
   100% {
     opacity: 0;
   }
+}
+
+/*Desktop*/
+@media screen and (min-width: 769px) {
+  #main-content {
+    transition: margin-left 0.3s ease-in-out;
+  }
+}
+/*Mobile*/
+@media screen and (max-width: 768px) {
+  #main-content {
+    margin-left: 0!important;
+  }
+}
+
+/* Main Content Styles */
+#main-content.menu-closing {
+  transition: margin-left 0.3s ease-in-out 0.6s;
+}
+
+.menu-open #main-content {
+  margin-left: 25%; 
+  transition: margin-left 0.3s ease-in-out;
+}
+.content{
+  border: 2px solid var(--bordercolor);
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #ffffff; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 2%;
+  flex: 1;
+  min-height: 85vh; 
+  display: flex;
+  flex-direction: column; 
+}
+
+@media screen and (max-width: 768px) {
+  .content{
+  margin: 5%;
+  min-height: 60vh; 
+  }
+}
+
+.content h2{
+  margin-bottom: 2%;
+}
+
+.skill-icon{
+  width: 10%;
+  margin: 1%;
+}
+@media screen and (max-width: 768px) {
+.skill-icon{
+  width: 15%;
+}
 }
