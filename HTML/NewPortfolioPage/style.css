@@ -2,7 +2,9 @@
   --bordercolor: blue;
   --menuitemscolor: black;
 }
-
+#header{
+  position: relative;
+}
 /* Main Content Styles */
 #main-content.menu-closing {
   transition: margin-left 0.3s ease-in-out 0.6s;
