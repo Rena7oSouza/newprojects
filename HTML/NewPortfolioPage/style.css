@@ -369,3 +369,47 @@
     font-size: 1rem;
   }
 }
+
+.project-cards {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 2%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.507);
+  border: 2px solid var(--bordercolor);
+  border-radius: 2%;
+}
+
+.project-cards-video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Aspect Ratio 16:9 */
+  overflow: hidden;
+}
+
+.project-cards-video-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101%;
+  height: 100%;
+}
+
+.project-cards-body {
+  flex-grow: 1; /* Faz o corpo crescer para ocupar o espaço restante */
+  overflow: hidden; /* Impede que o conteúdo ultrapasse os limites do card */
+}
+
+.project-cards-footer {
+  margin-top: auto; /* Empurra o rodapé para a parte inferior */
+}
+
+.project-cards-footer-images {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-cards-footer-img {
+  width: 48%; /* Ajusta as imagens para ficarem lado a lado */
+  height: auto;
+}
