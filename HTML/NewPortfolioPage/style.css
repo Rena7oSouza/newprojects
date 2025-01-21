@@ -1,5 +1,6 @@
-:root{
+:root {
   --bordercolor: blue;
+  --menuitemscolor: black;
 }
 
 /* Main Content Styles */
@@ -17,6 +18,7 @@
   width: 200px;
   border-radius: 50%;
 }
+
 /* Button Styles */
 .my-nav-btn {
   border: none;
@@ -100,6 +102,7 @@
   top: 20px;
   right: 20px;
 }
+
 /* List Styles */
 .list {
   list-style-type: none;
@@ -111,7 +114,7 @@
 }
 
 .list li a {
-  color: black;
+  color: var(--menuitemscolor);
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
@@ -160,35 +163,39 @@
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
 /* Image Styles */
 .my-photo {
   width: 200px;
   border-radius: 50%;
 }
+
 @media screen and (max-width: 768px) {
 
-  .my-photo {         
-    max-width: 125px;       
-    height: auto;           
+  .my-photo {
+    max-width: 125px;
+    height: auto;
   }
 }
 
 /* Text Styles */
 #title {
   display: flex;
-  justify-content: center; 
-  align-items: center;    
-  white-space: nowrap;     
-  overflow: hidden;       
-  font-size: 40px;         
-  position: relative;     
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 40px;
+  position: relative;
   margin-inline: 10%;
 }
 
 #title::after {
-  content: '|';          
-  animation: blink 1s infinite; 
-  margin-left: 5px;      }
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 5px;
+}
+
 @media screen and (max-width: 768px) {
   #title {
     font-size: 25px;
@@ -197,9 +204,10 @@
 
 @media screen and (max-width: 480px) {
   #title {
-    font-size: 20px; 
+    font-size: 20px;
   }
 }
+
 /* Animation */
 @keyframes blink {
   0% {
@@ -221,10 +229,11 @@
     transition: margin-left 0.3s ease-in-out;
   }
 }
+
 /*Mobile*/
 @media screen and (max-width: 768px) {
   #main-content {
-    margin-left: 0!important;
+    margin-left: 0 !important;
   }
 }
 
@@ -234,39 +243,126 @@
 }
 
 .menu-open #main-content {
-  margin-left: 25%; 
+  margin-left: 25%;
   transition: margin-left 0.3s ease-in-out;
 }
-.content{
+
+.content {
   border: 2px solid var(--bordercolor);
   border-radius: 12px;
   padding: 20px;
-  background-color: #ffffff; 
+  background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 2%;
   flex: 1;
-  min-height: 85vh; 
+  min-height: 85vh;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
-  .content{
-  margin: 5%;
-  min-height: 60vh; 
+  .content {
+    margin: 5%;
+    min-height: 60vh;
   }
 }
 
-.content h2{
+.content h2 {
   margin-bottom: 2%;
 }
 
-.skill-icon{
+.skill-icon {
   width: 10%;
   margin: 1%;
 }
-@media screen and (max-width: 768px) {
-.skill-icon{
-  width: 15%;
+
+.line {
+  border: 0;
+  height: 3px;
+  background: var(--bordercolor);
+  margin-bottom: 2%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.507);
+  width: 50%;
 }
+
+.skill-info {
+  margin-top: 2%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .skill-icon {
+    width: 15%;
+  }
+
+  .line {
+    width: 90% !important;
+    margin-bottom: 5%;
+  }
+
+  #skills h4 {
+    font-size: 15px;
+    margin-bottom: 1%;
+    margin-top: 5%;
+  }
+}
+
+.graduations-card {
+  height: 145px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.507);
+  border: 2px solid var(--bordercolor);
+  border-radius: 2%;
+  overflow: hidden;
+}
+
+.graduations-card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Organiza os elementos do texto */
+  overflow: hidden;
+  /* Impede que o conteúdo ultrapasse o espaço do card */
+  height: 85%;
+  margin: 2%;
+}
+
+.graduations-card-title {
+  flex: 1 0 45%;
+}
+
+
+.graduations-card-text,
+.graduations-card-text-year {
+  font-size: clamp(0.9rem, 4vw, 0.9rem);
+  flex: 1 0 25%;
+}
+
+@media (max-width: 767px) {
+  .graduations-card {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .graduations-img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .graduations-card-body {
+    height: auto;
+  }
+
+  .graduations-card-title {
+    font-size: 1.2rem;
+
+    .graduations-card-text,
+    .graduations-card-text-year {
+      font-size: 1rem;
+    }
+  }
 }

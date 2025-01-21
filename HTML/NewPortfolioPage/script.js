@@ -4,6 +4,9 @@ const close_btn = document.querySelector('.close-btn');
 const nav = document.querySelectorAll('.my-nav');
 const mainContent = document.getElementById('main-content');
 const menuItems = document.querySelectorAll('.list li a');
+const sections = document.querySelectorAll('section');
+const projectList = document.getElementById("projectList");
+
 window.addEventListener('DOMContentLoaded', () => {
     const aboutMeLink = document.querySelector('a[href="#about"]');
     if (aboutMeLink) {
@@ -11,7 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-const sections = document.querySelectorAll('section');
 sections.forEach(section => {
     if (section.id !== 'header') {
         section.style.display = 'none';

@@ -2,127 +2,216 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina com Menu Responsivo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-        crossorigin="anonymous" />
-    <link href="style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina com Menu Responsivo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-    <section id="header">
-        <button class="my-nav-btn open-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="my-nav my-nav-green">
-            <div class="my-nav my-nav-yellow">
-                <div class="my-nav my-nav-blue">
-                    <div class="my-nav my-nav-white">
-                        <button class="my-nav-btn close-btn">
-                            <i class="fas fa-times"></i>
-                        </button>
-                        <img src="templates/image.jpg" alt="" class="my-photo">
-                        <ul class="list">
-                            <li><a href="#">About Me</a></li>
-                            <li><a href="#">Skills</a></li>
-                            <li><a href="#" id="certifications">CERTIFICATIONS</a></li>
-                            <li id="certificationsList" class="certifications-list" style="display: none;">
-                                <ul>
-                                    <li><a href="#">Graduations</a></li>
-                                    <li><a href="#">Courses</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#" id="projects">PROJECTS</a></li>
-                            <li id="projectList" class="project-list" style="display: none;">
-                                <ul>
-                                    <li><a href="#">HTML/CSS</a></li>
-                                    <li><a href="#">Python</a></li>
-                                    <li><a href="#">Javascript</a></li>
-                                    <li><a href="#">Unity</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Contact Me</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  <section id="header">
+    <button class="my-nav-btn open-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="my-nav my-nav-green">
+      <div class="my-nav my-nav-yellow">
+        <div class="my-nav my-nav-blue">
+          <div class="my-nav my-nav-white">
+            <button class="my-nav-btn close-btn">
+              <i class="fas fa-times"></i>
+            </button>
+            <img src="templates/image.jpg" alt="" class="my-photo">
+            <ul class="list">
+              <li><a href="#">About Me</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#" id="certifications">CERTIFICATIONS</a></li>
+              <li id="certificationsList" class="certifications-list" style="display: none;">
+                <ul>
+                  <li><a href="#">Graduations</a></li>
+                  <li><a href="#">Courses</a></li>
+                </ul>
+              </li>
+              <li><a href="#" id="projects">PROJECTS</a></li>
+              <li id="projectList" class="project-list" style="display: none;">
+                <ul>
+                  <li><a href="#">HTML/CSS</a></li>
+                  <li><a href="#">Python</a></li>
+                  <li><a href="#">Javascript</a></li>
+                  <li><a href="#">Unity</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Contact Me</a></li>
+            </ul>
+          </div>
         </div>
-        <h1 id="title" class="title"></h1>
-    </section>
-
-    <div id="main-content">
-        <section id="about">
-                <div class="content">
-                    <h2>About Me</h2>                
-                    <p>Hello, I am Renato Francisco Souza de Oliveira, a professional passionate about technology and innovation.</br>
-                        I hold degrees in Physical Education and Digital Game Design, along with Postgraduate Certificates in DevOps and Software Engineering. Currently, I am pursuing a Bachelor's Degree in Administration.</br>
-                        I have experience in software development, technical monitoring, and office assistance. My expertise spans various programming languages, databases, computer networks, and computer assembly and maintenance. Technology and innovation have been integral to my life since childhood—starting from trying to fix my video games on my own to adulthood, where I deepened my knowledge through programming courses.</br>
-                        I am a curious, creative, and proactive individual, committed to achieving my goals. I enjoy learning new things, working in a team, and embracing challenges. In my free time, I love spending time with my wife and son, playing video games, learning something new, and practicing sports.</p>
-                </div>
-        </section>
-        <section id="skills">
-            <div class="content">
-                <h2>Skills</h2>
-                <div>
-                    <h4>SO</h4>
-                    <div class="my-line"></div>
-                  </div>
-                  <div class="skill-handler">
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain-wordmark.svg" />
-                  </div>
-                  <div>
-                    <h4>Programming Languages</h4>
-                    <div class="my-line"></div>
-                  </div>
-                  <div class="skill-handler">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" />
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
-                  </div>
-                  <div>
-                    <h4>Frameworks</h4>
-                    <div class="my-line"></div>
-                  </div>
-                  <div class="skill-handler">
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original-wordmark.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original-wordmark.svg" />
-                    <img class="skill-icon"
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original-wordmark.svg" />
-          
-                  </div>
-                  <img class="skill-info"
-                    src="https://camo.githubusercontent.com/a43af05c1436c5d74e49b5f10f94cecb99b2734bd716d3654ba5984c3fdd6407/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d72656e61376f736f757a61267468656d653d64726163756c612673686f775f69636f6e733d7472756526636172645f77696474683d313030307078">
-                </div>
-            </div>
-
-        </section>
+      </div>
     </div>
+    <h1 id="title" class="title"></h1>
+  </section>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="script.js"></script>
+  <div id="main-content">
+    <section id="about">
+      <div class="content">
+        <h2>About Me</h2>
+        <p>Hello, I am Renato Francisco Souza de Oliveira, a professional passionate about technology and
+          innovation.</br>
+          I hold degrees in Physical Education and Digital Game Design, along with Postgraduate Certificates in DevOps
+          and Software Engineering. Currently, I am pursuing a Bachelor's Degree in Administration.</br>
+          I have experience in software development, technical monitoring, and office assistance. My expertise spans
+          various programming languages, databases, computer networks, and computer assembly and maintenance. Technology
+          and innovation have been integral to my life since childhood—starting from trying to fix my video games on my
+          own to adulthood, where I deepened my knowledge through programming courses.</br>
+          I am a curious, creative, and proactive individual, committed to achieving my goals. I enjoy learning new
+          things, working in a team, and embracing challenges. In my free time, I love spending time with my wife and
+          son, playing video games, learning something new, and practicing sports.</p>
+      </div>
+    </section>
+    <section id="skills">
+      <div class="content">
+        <h2>Skills</h2>
+        <h4>SO</h4>
+        <div class="line"></div>
+        <div class="skill-handler">
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain-wordmark.svg" />
+        </div>
+        <h4>Programming Languages</h4>
+        <div class="line"></div>
+        <div class="skill-handler">
+          <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" />
+          <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+        </div>
+        <h4>Frameworks</h4>
+        <div class="line"></div>
+        <div class="skill-handler">
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain-wordmark.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original-wordmark.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original-wordmark.svg" />
+          <img class="skill-icon"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original-wordmark.svg" />
+        </div>
+        <img class="skill-info"
+          src="https://camo.githubusercontent.com/a43af05c1436c5d74e49b5f10f94cecb99b2734bd716d3654ba5984c3fdd6407/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d72656e61376f736f757a61267468656d653d64726163756c612673686f775f69636f6e733d7472756526636172645f77696474683d313030307078">
+      </div>
+    </section>
+    <section id="graduations">
+      <div class="content">
+        <h3>Completed</h3>
+        <div class="line"></div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col-md-6">
+            <div class="graduations-card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="templates/anhanguera.jpg" class="img-fluid graduations-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="graduations-card-body">
+                    <h3 class="graduations-card-title">Physical Education</h3>
+                    <h4 class="graduations-card-text">Physical Education Degree by Anhanguera College</h4>
+                    <h5 class="graduations-card-text text-body-secondary">2010 - 2013</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="graduations-card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="templates/facens.jpg" class="img-fluid graduations-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="graduations-card-body">
+                    <h3 class="graduations-card-title">Digital Game Design</h3>
+                    <h4 class="graduations-card-text">Technologist in Digital Game Design by FACENS</h4>
+                    <h5 class="graduations-card-text-year text-body-secondary">2015 - 2017</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="graduations-card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="templates/anhanguera.jpg" class="img-fluid graduations-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="graduations-card-body">
+                    <h3 class="graduations-card-title">DevOps</h3>
+                    <h4 class="graduations-card-text">Postgraduate in DevOps by Anhanguera College</h4>
+                    <h5 class="graduations-card-text text-body-secondary">2023 - 2024</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="graduations-card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="templates/anhanguera.jpg" class="img-fluid graduations-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="graduations-card-body">
+                    <h3 class="graduations-card-title">Software Engineering</h3>
+                    <h4 class="graduations-card-text">Postgraduate in Software Engineering by Anhanguera College</h4>
+                    <h5 class="graduations-card-text text-body-secondary">2024</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Studying</h3>
+        <div class="line"></div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col-md-6">
+            <div class="graduations-card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="templates/anhanguera.jpg" class="img-fluid graduations-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="graduations-card-body">
+                    <h3 class="graduations-card-title">Administration</h3>
+                    <h4 class="graduations-card-text">Graduation in Administration by Anhanguera College</h4>
+                    <h5 class="graduations-card-text text-body-secondary">2023-2026</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
