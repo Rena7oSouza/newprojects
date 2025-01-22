@@ -1,6 +1,7 @@
 :root {
   --bordercolor: blue;
   --menuitemscolor: black;
+  --marginprojectcards: 2%;
 }
 
 #header {
@@ -396,20 +397,32 @@
 }
 
 .project-cards-body {
-  flex-grow: 1; /* Faz o corpo crescer para ocupar o espaço restante */
-  overflow: hidden; /* Impede que o conteúdo ultrapasse os limites do card */
+  flex-grow: 1; 
+  overflow: hidden; 
+  margin: var(--marginprojectcards);
 }
 
 .project-cards-footer {
-  margin-top: auto; /* Empurra o rodapé para a parte inferior */
+  margin-top: auto;
+  overflow: hidden;
+  margin: var(--marginprojectcards);
 }
 
 .project-cards-footer-images {
-  display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
+}
+.project-cards-footer-img {
+  margin: 1%; 
 }
 
-.project-cards-footer-img {
-  width: 48%; /* Ajusta as imagens para ficarem lado a lado */
-  height: auto;
+.project-cards-footer-lnk {
+  width: 100%;                    /* A imagem ocupará 100% da largura do seu container */
+  height: 40px;                   /* Mantém a proporção da imagem */
+  border-radius: 5%;              /* Bordas arredondadas para as imagens */
+  transition: transform 0.3s ease;
+  cursor: pointer;               /* Cursor de mão para indicar que as imagens são clicáveis */
+}
+
+.project-cards-footer-lnk:hover {
+  transform: scale(1.1);          /* Aumenta o tamanho da imagem quando passa o mouse */
 }
