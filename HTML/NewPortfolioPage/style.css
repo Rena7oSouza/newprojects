@@ -310,6 +310,12 @@
     margin-bottom: 1%;
     margin-top: 5%;
   }
+
+  .skill-info {
+    transform: scaleY(2.0);
+    width: auto;
+    height: 200px;
+  }
 }
 
 .graduations-card {
@@ -384,7 +390,8 @@
 .project-cards-video-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* Aspect Ratio 16:9 */
+  padding-top: 56.25%;
+  /* Aspect Ratio 16:9 */
   overflow: hidden;
 }
 
@@ -397,8 +404,8 @@
 }
 
 .project-cards-body {
-  flex-grow: 1; 
-  overflow: hidden; 
+  flex-grow: 1;
+  overflow: hidden;
   margin: var(--marginprojectcards);
 }
 
@@ -409,20 +416,26 @@
 }
 
 .project-cards-footer-images {
-  justify-content: space-between; 
+  justify-content: space-between;
 }
+
 .project-cards-footer-img {
-  margin: 1%; 
+  margin: 1%;
 }
 
 .project-cards-footer-lnk {
-  width: 100%;                    /* A imagem ocupará 100% da largura do seu container */
-  height: 40px;                   /* Mantém a proporção da imagem */
-  border-radius: 5%;              /* Bordas arredondadas para as imagens */
+  width: 100%;
+  /* A imagem ocupará 100% da largura do seu container */
+  height: 40px;
+  /* Mantém a proporção da imagem */
+  border-radius: 5%;
+  /* Bordas arredondadas para as imagens */
   transition: transform 0.3s ease;
-  cursor: pointer;               /* Cursor de mão para indicar que as imagens são clicáveis */
+  cursor: pointer;
+  /* Cursor de mão para indicar que as imagens são clicáveis */
 }
 
 .project-cards-footer-lnk:hover {
-  transform: scale(1.1);          /* Aumenta o tamanho da imagem quando passa o mouse */
+  transform: scale(1.1);
+  /* Aumenta o tamanho da imagem quando passa o mouse */
 }
