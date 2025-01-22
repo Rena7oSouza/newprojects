@@ -404,17 +404,25 @@
 }
 
 .project-cards-body {
-  flex-grow: 1;
+  overflow: hidden;
+  margin: var(--marginprojectcards);
+  
+}
+
+.project-cards-text{
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 5%;
+}
+
+.project-cards-footer, .project-cards-footer-links {
   overflow: hidden;
   margin: var(--marginprojectcards);
 }
 
-.project-cards-footer {
+.project-cards-footer-links{
   margin-top: auto;
-  overflow: hidden;
-  margin: var(--marginprojectcards);
 }
-
 .project-cards-footer-images {
   justify-content: space-between;
 }
@@ -425,17 +433,12 @@
 
 .project-cards-footer-lnk {
   width: 100%;
-  /* A imagem ocupará 100% da largura do seu container */
   height: 40px;
-  /* Mantém a proporção da imagem */
   border-radius: 5%;
-  /* Bordas arredondadas para as imagens */
   transition: transform 0.3s ease;
   cursor: pointer;
-  /* Cursor de mão para indicar que as imagens são clicáveis */
 }
 
 .project-cards-footer-lnk:hover {
   transform: scale(1.1);
-  /* Aumenta o tamanho da imagem quando passa o mouse */
 }
