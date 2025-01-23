@@ -10,6 +10,7 @@
 body{
   color: var(--textcolor);
   background-color: var(--mainpagecolor);
+  overflow: hidden;
 }
 .fa-bars{
   color: var(--textcolor);
@@ -273,6 +274,8 @@ body{
   min-height: 85vh;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  max-height: 85vh;
 }
 
 @media screen and (max-width: 768px) {
