@@ -30,8 +30,6 @@ const idMap = {
     'Courses': 'courses',
     'HTML/CSS': 'html-css',
     'Python': 'python',
-    'Javascript': 'javascript',
-    'Unity': 'unity',
     'Contact Me': 'contact'
 };
 
