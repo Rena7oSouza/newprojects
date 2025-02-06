@@ -1,0 +1,4 @@
+/* Apply the height adjustment to the SVG container */
+.first-line .svg-container {
+    height: 200px !important; /* Set the height of the SVG container to 100px */
+}
