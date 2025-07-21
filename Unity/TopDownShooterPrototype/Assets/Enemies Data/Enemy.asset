@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d4b70956ce94893a24f6a66b973e32, type: 3}
+  m_Name: Enemy
+  m_EditorClassIdentifier: 
+  enemyName: 
+  maxHealth: 10
+  damage: 1
+  expReward: 100
+  moveSpeed: 2
+  stoppingDistance: 1.5
+  lootTable:
+  - itemPrefab: {fileID: 7829823040284518083, guid: 4a79fc35285c1486eb26c29ceb3f29c1, type: 3}
+    minQuantity: 0
+    maxQuantity: 10
+    dropChance: 76.1
+    decayRate: 2
+  deathEffectPrefab: {fileID: 1121749123739862461, guid: 59955daeced19cf3fababb3747bf193f, type: 3}
