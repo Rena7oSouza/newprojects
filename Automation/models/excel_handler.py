@@ -38,7 +38,7 @@ class ExcelHandler:
         # Save the updated Excel file
         self.df.to_excel(self.filepath, index=False)
 
-    def mark_failure(self, item: dict):
+    def mark_failure(self, item: dict, addedit):
         name = item.get('Produto')
         index = self.df[self.df.iloc[:, 0] == name].index
         if not index.empty:
@@ -47,6 +47,11 @@ class ExcelHandler:
 
             current_obs = str(self.df.at[i, 'Obs']).strip()
             new_message = "Can't be added on TN5250J"
+            if addedit == "Add":
+                new_message = "Can't be added on TN5250J"
+            elif addedit == "Edit":
+                new_message = "Can't be edit on TN5250J"
+                
             if new_message not in current_obs:
                 if current_obs:
                     updated_obs = f"{current_obs}; {new_message}"

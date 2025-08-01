@@ -15,7 +15,8 @@ def extract_members(copied_text):
             parts = line.split()
             if len(parts) >= 2:
                 member = parts[0] if parts[0] != '' else parts[1]
-                members.append(member)
+                if member.isupper():
+                        members.append(member)
     print("Members found:", members)
     return members
 
@@ -31,12 +32,12 @@ def add_or_edit(excel, tabledata, tnmembers, add_callback, edit_callback):
                 for member in tnmembers:
                     if product == member:
                         index = tnmembers.index(product)
-                        edit_callback(item, index)
+                        edit_callback(excel, item, index, len(tabledata))
                     
                         
 
-def verify_success(excel, message, item):
-    if "added to file BPAPS061/QCPPSRC." in message:
+def verify_success(excel, message, item, addedit):
+    if "added to file BPAPS061/QCPPSRC." in message or "BPAPS061/QCPPSRC changed":
         print("success")
     else:
-        excel.mark_failure(item)
+        excel.mark_failure(item, addedit)

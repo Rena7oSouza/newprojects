@@ -59,6 +59,7 @@ class TN5250JAutomation:
         copied_text = pyperclip.paste()
         return copied_text
     
+
     def scroll_and_collect_members(self):
         screens = []
         down_count = 0
@@ -91,19 +92,15 @@ class TN5250JAutomation:
         pyautogui.press("f6")
         time.sleep(1)
         # Type Product
-        produto = member.get("Produto", "")
-        pyautogui.press("capslock") 
-        pyautogui.write(produto.replace(" ", ""), interval=0.05)
+        product = member.get("Produto", "")
+        pyautogui.write(product.replace(" ", ""), interval=0.05)
         time.sleep(0.5)
-        pyautogui.press("capslock")
         keyboard.send("tab")
         time.sleep(0.5)
 
         #Type TXT
-        pyautogui.press("capslock")  
         pyautogui.write("TXT", interval=0.05)
         time.sleep(0.5)
-        pyautogui.press("capslock")
         # Del function wasn't working
         pyautogui.write(" " * 2, interval=0.02)  
         time.sleep(0.2)
@@ -112,9 +109,10 @@ class TN5250JAutomation:
         keyboard.send("tab")
         time.sleep(0.5)
 
-        valor = f"{float(member.get('Valor', 0)):0.2f}"
-        valor = f"valor {valor}" 
-        pyautogui.write(valor, interval=0.1)
+        price = f"valor {float(member.get('Valor', 0)):0.2f}"
+        if len(price) < 50:
+            price += " " * (50 - len(price))
+        pyautogui.write(price, interval=0.1)
         time.sleep(1)
 
         # Press Enter
@@ -122,8 +120,10 @@ class TN5250JAutomation:
         time.sleep(1)
 
         #Type Description
-        descricao = member.get("Descrição", "")[:70]
-        pyautogui.write(descricao, interval=0.05)
+        description = member.get("Descrição", "")[:70]
+        if len(description) < 70:
+            description += " " * (70 - len(description))
+        pyautogui.write(description, interval=0.05)
         time.sleep(0.5)
 
         #Press Enter
@@ -138,12 +138,60 @@ class TN5250JAutomation:
         pyautogui.press("enter")
         time.sleep(0.5)
 
-        verify_success(excel, self.select_and_copy_screen(), produto)
+        verify_success(excel, self.select_and_copy_screen(), product, "Add")
     
 
 
-    def edit_member(self, member,idx):
-        pass
+    def edit_member(self, excel, member,idx, totalidx):
+        for _ in range(idx*3):
+            pyautogui.press('tab')
+            time.sleep(0.5)
+        
+        pyautogui.press("2")
+        time.sleep(0.5)
+        pyautogui.press("enter")
+        time.sleep(0.5)
+        
+
+        for _ in range(3):
+            pyautogui.press('tab')
+            time.sleep(0.5)
+
+        description = member.get("Descrição", "")[:70]
+        if len(description) < 70:
+            description += " " * (70 - len(description))
+        pyautogui.write(description, interval=0.05)
+        time.sleep(0.5)
+
+        pyautogui.press("enter")
+        time.sleep(0.5)
+
+        pyautogui.press("F3")
+        time.sleep(0.5)
+
+        for _ in range(4):
+            pyautogui.press('tab')
+            time.sleep(0.5)
+
+        price = f"valor {float(member.get('Valor', 0)):0.2f}"
+        if len(price) < 50:
+            price += " " * (50 - len(price))
+        pyautogui.write(price, interval=0.1)
+        time.sleep(0.5)
+
+        pyautogui.press("enter")
+        time.sleep(0.5)
+
+        verify_success(excel, self.select_and_copy_screen(),member.get("Produto", ""), "Edit")
+        self.tostartfield(idx,totalidx)
+
+    def tostartfield(self, currentidx, totalidx):
+
+        totaltabs = (totalidx - currentidx) * 3 + 4
+        for _ in range(totaltabs):
+            pyautogui.press('tab')
+            time.sleep(0.5)
+
 
     def run(self, excel):
         self.open_java_program()
