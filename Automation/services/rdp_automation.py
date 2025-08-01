@@ -11,7 +11,6 @@ class RDPAutomation:
         self.rdp_pass = rdp_pass
 
     def connect_rdp(self):
-        print("Iniciando conexão RDP...")
         subprocess.Popen(f"mstsc /v:{self.dns}")
         time.sleep(5)
 

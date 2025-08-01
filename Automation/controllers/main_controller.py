@@ -5,6 +5,7 @@ from services.tn5250j_automation import TN5250JAutomation
 
 def run():
     filepath = r'C:\Arquivos_Teste\Template_Planilha_Teste.xlsx'
+    tn5250jpath = r"C:\BPATech\tn5250j-0.7.6\tn5250j.jar"
 
     # Initialize handlers
     excel = ExcelHandler(filepath)
@@ -54,8 +55,8 @@ def testing():#exclude
     tn5250j = TN5250JAutomation(user= "BPAPS06",
                                 password= "bp4ps25")
     filepath = r'C:\Arquivos_Teste\Template_Planilha_Teste.xlsx'
-
+    tn5250jpath = r"C:\BPATech\tn5250j-0.7.6\tn5250j.jar"
     # Initialize handlers
     excel = ExcelHandler(filepath)
     #Run TN5250J automation
-    tn5250j.run(excel)
+    tn5250j.run(tn5250jpath ,excel)

@@ -38,6 +38,6 @@ def add_or_edit(excel, tabledata, tnmembers, add_callback, edit_callback):
 
 def verify_success(excel, message, item, addedit):
     if "added to file BPAPS061/QCPPSRC." in message or "BPAPS061/QCPPSRC changed":
-        print("success")
+        pass
     else:
         excel.mark_failure(item, addedit)
