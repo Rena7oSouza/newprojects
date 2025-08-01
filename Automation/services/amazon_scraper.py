@@ -52,7 +52,7 @@ class AmazonScraper:
             price_whole = result.select_one("span.a-price-whole")
             price_fraction = result.select_one("span.a-price-fraction")
             if price_whole and price_fraction:
-                price = f"R$ {price_whole.text.strip()}{price_fraction.text.strip()}"
+                price = f"{price_whole.text.strip()}{price_fraction.text.strip()}"
             else:
                 price = "Price not found"
 
@@ -70,7 +70,7 @@ class AmazonScraper:
                 'price': '',
                 'title': '',
                 'status': 'Failure',
-                'obs': str(e)
+                'obs': str(f"Error! {e}")
             }
 
     def process_products(self, names: list[str]) -> list[dict]:
