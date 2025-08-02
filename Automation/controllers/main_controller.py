@@ -1,6 +1,6 @@
 from models.excel_handler import ExcelHandler
 from services.amazon_scraper import AmazonScraper
-from services.rdp_automation import RDPAutomation
+#from services.rdp_automation import RDPAutomation
 from services.tn5250j_automation import TN5250JAutomation
 from config import (
     FILEPATH_EXCEL, TN5250J_PATH,
@@ -23,14 +23,14 @@ def run():
     excel.update_product_data(results)
 
     # Initialize RDP automation with server credentials
-    rdp = RDPAutomation(
-        dns=RDP_DNS,
-        rdp_user=RDP_USER,
-        rdp_pass=RDP_PASS
-    )
+    #rdp = RDPAutomation(
+    #    dns=RDP_DNS,
+    #    rdp_user=RDP_USER,
+    #    rdp_pass=RDP_PASS
+    #)
 
     # Establish RDP connection and execute remote operations
-    rdp.run()
+    #rdp.run()
 
     # Initialize TN5250J automation with login credentials
     tn5250j = TN5250JAutomation(

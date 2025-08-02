@@ -1,0 +1,10 @@
+pylance
+selenium
+bs4
+pandas
+pyautogui
+pyperclip
+keyboard
+openpyxl
+numpy
+pyinstaller
