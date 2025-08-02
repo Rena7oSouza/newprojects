@@ -85,7 +85,7 @@ class TN5250JAutomation:
 
         presstab(0.5)
 
-        price = f"valor {float(member.get('Valor', 0)):0.2f}"
+        price = f"valor {member.get('Valor', '0')}"
         if len(price) < 50:
             price += " " * (50 - len(price))
         pyautoguiwrite(price, 1, 0.1)
@@ -132,7 +132,7 @@ class TN5250JAutomation:
 
         presstab(0.5, 4)
 
-        price = f"valor {float(member.get('Valor', 0)):0.2f}"
+        price = f"valor {member.get('Valor', '0')}"
         if len(price) < 50:
             price += " " * (50 - len(price))
 

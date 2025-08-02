@@ -35,7 +35,14 @@ class AmazonScraper:
 
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
 
-            result = soup.select_one('div[data-component-type="s-search-result"]')
+            results = soup.select('div[data-component-type="s-search-result"]')
+            for result in results: #remove or comment this for if must show sponsored items
+                if result.find(string=lambda text: text and "Patrocinado" in text):
+                    continue  
+                else:
+                    break  
+            else:
+                result = None  
 
             if not result:
                 return {
